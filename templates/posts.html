@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+    <title>Posts</title>
+    
+</head>
+<body>
+    <ul>
+    {% for id,date,title,caption in posts %}
+        <li>
+        <h3>
+            <a href="/post/{{ id }}"> {{ title }} </a>
+        </h3>
+        <h4>
+            {{ date }}
+        </h4>
+        <div>
+            {{ caption }}
+        </div>
+        </li>
+    {% endfor %}
+    </ul>
+    <form action="/posts/" method="POST" enctype=multipart/form-data>
+        title
+        <input type="text" name="title" value=""/>
+        caption
+        <input type="text" name="caption" value=""/>
+        <input type="file" name="file"/>
+        <input type="submit" name="some_name" value=""/>
+    </form>
+</body>
+</html>

@@ -1,0 +1,5 @@
+v
+*.swp
+*.pyc
+database
+test-db
